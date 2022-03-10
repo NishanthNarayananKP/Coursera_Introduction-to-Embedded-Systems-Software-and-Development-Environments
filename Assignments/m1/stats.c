@@ -44,6 +44,8 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+  printf("\nModule Demo File!\n");
+
 }
 
 /* Add other Implementation File Code Here */
