@@ -42,40 +42,190 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations */
-
+  unsigned char minimum = 0;
+  unsigned char maximum = 0;
+  unsigned char mean = 0;
+  unsigned char median = 0;
 
   /* Statistics and Printing Functions */
 
-  printf("\nModule Demo File!\n");
+  printf("\nArray before sorting: \n");
+  print_array(&test, SIZE);
+
+  minimum = find_minimum(&test, SIZE);
+  maximum = find_maximum(&test, SIZE);
+  median = find_median(&test, SIZE);
+  mean = find_mean(&test, SIZE);
+
+  print_statistics(minimum, maximum, mean, median);
+
+  sort_array(&test, SIZE);
+  printf("\nArray after sorting: \n");
+  print_array(&test, SIZE);
+
+  minimum = find_minimum(&test, SIZE);
+  maximum = find_maximum(&test, SIZE);
+  median = find_median(&test, SIZE);
+  mean = find_mean(&test, SIZE);
+
+  print_statistics(minimum, maximum, mean, median);
+
+  printf("\n");
 
 }
 
 /* Implementation and Functions Definitions */
 
-void print_statistics (unsigned char minimum, unsigned char maximum, float mean, unsigned char median){
-
-}
-
-void print_array (unsigned char * array, unsigned int count){
-
-}
-
-unsigned char find_median (unsigned char * array, unsigned int count){
-
-}
-
-float find_mean (unsigned char * array, unsigned int count){
-
-}
-
-unsigned char find_maximum (unsigned char * array, unsigned int count){
-
-}
-
-unsigned char find_minimum (unsigned char * array, unsigned int count){
-
-}
-
-void sort_array (unsigned char * array, unsigned int count){
+void print_statistics(unsigned char minimum, unsigned char maximum, unsigned char mean, unsigned char median){
   
+  printf("\nThe minimum is: %d \n", minimum);
+  printf("\nThe maximum is: %d \n", maximum);
+  printf("\nThe mean is: %d \n", mean);
+  printf("\nThe median is: %d \n", median);
+
+}
+
+void print_array(unsigned char * array, unsigned int count){
+  
+  if(array == NULL){
+    printf("Please Enter a valid input\n");
+    return;
+  }
+
+  if(count <= 0){
+    printf("The array is empty...\n");
+    return;
+  }
+
+  for(unsigned int i = 0; i < count; i++){
+    if(i % 8 == 0){
+      printf("\n");
+    }
+    printf("%d \t", array[i]);
+  }
+
+  printf("\n");
+
+}
+
+unsigned char find_median(unsigned char * array, unsigned int count){
+  
+  unsigned int median = 0;
+
+  if(array == NULL){
+    printf("Please Enter a valid input\n");
+    return -1;
+  }
+
+  if(count <= 0){
+    printf("The array is empty...\n");
+    return -1;
+  }
+
+  if((count % 2) == 0 ){
+    return (array[count/2]);
+  }
+  else{
+    return ((array[count/2] + array[count/2]+1) / 2);
+  }
+
+}
+
+unsigned char find_mean(unsigned char * array, unsigned int count){
+  
+  unsigned int sum = 0;
+
+  if(array == NULL){
+    printf("Please Enter a valid input\n");
+    return -1;
+  }
+
+  if(count <= 0){
+    count = 1;
+  }
+
+  for(unsigned int i = 0; i < count; i++){
+    sum = sum + array[i];
+  }
+ 
+  return (sum / count);
+
+}
+
+unsigned char find_maximum(unsigned char * array, unsigned int count){
+  
+  unsigned int max;
+
+  if(array == NULL){
+    printf("Please Enter a valid input\n");
+    return -1;
+  }
+
+  if(count <= 0){
+    printf("The array is empty...\n");
+    return -1;
+  }
+
+  max = array[0];
+  
+  for(unsigned int i = 0; i < count; i++){
+    if(array[i] > max){
+      max = array[i];
+    }
+  }
+
+  return max;
+
+}
+
+unsigned char find_minimum(unsigned char * array, unsigned int count){
+
+  unsigned int min;
+
+  if(array == NULL){
+    printf("Please Enter a valid input\n");
+    return -1;
+  }
+
+  if(count <= 0){
+    printf("The array is empty...\n");
+    return -1;
+  }
+
+  min = array[0];
+
+  for(unsigned int i = 0; i < count; i++){
+    if(array[i] < min){
+      min = array[i];
+    }
+  }
+
+  return min;
+
+}
+
+void sort_array(unsigned char * array, unsigned int count){
+
+  unsigned int temp;
+
+  if(array == NULL){
+    printf("Please Enter a valid input\n");
+    return;
+  }
+
+  if(count <= 0){
+    printf("The array is empty...\n");
+    return;
+  }
+
+  for(unsigned int i = 0; i < count-1; i++){
+    for(unsigned int k = 0; k < count-i-1; k++){
+      if( array[k+1] > array[k] ){
+        temp = array[k+1];
+        array[k+1] = array[k];
+        array[k] = temp;
+      }
+    }
+  }
+
 }

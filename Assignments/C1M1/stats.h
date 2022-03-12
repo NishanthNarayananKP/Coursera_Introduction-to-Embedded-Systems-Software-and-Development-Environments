@@ -35,7 +35,7 @@
  *
  * @return void.
  */
-void print_statistics (unsigned char minimum, unsigned char maximum, float mean, unsigned char median);
+void print_statistics(unsigned char minimum, unsigned char maximum, unsigned char mean, unsigned char median);
 
 
 /**
@@ -48,7 +48,7 @@ void print_statistics (unsigned char minimum, unsigned char maximum, float mean,
  *
  * @return void.
  */
-void print_array (unsigned char * array, unsigned int count);
+void print_array(unsigned char * array, unsigned int count);
 
 
 /**
@@ -61,7 +61,7 @@ void print_array (unsigned char * array, unsigned int count);
  *
  * @return median The median value of the given array.
  */
-unsigned char find_median (unsigned char * array, unsigned int count);
+unsigned char find_median(unsigned char * array, unsigned int count);
 
 /**
  * @brief Finds the mean of the given array.
@@ -73,7 +73,7 @@ unsigned char find_median (unsigned char * array, unsigned int count);
  *
  * @return mean The mean value of the given array.
  */
-float find_mean (unsigned char * array, unsigned int count);
+unsigned char find_mean(unsigned char * array, unsigned int count);
 
 /**
  * @brief Finds the maximum of the given array.
@@ -85,7 +85,7 @@ float find_mean (unsigned char * array, unsigned int count);
  *
  * @return maximum The maximum value of the given array.
  */
-unsigned char find_maximum (unsigned char * array, unsigned int count);
+unsigned char find_maximum(unsigned char * array, unsigned int count);
 
 /**
  * @brief Finds the minimum of the given array.
@@ -97,7 +97,7 @@ unsigned char find_maximum (unsigned char * array, unsigned int count);
  *
  * @return minimum The minimum value of the given array.
  */
-unsigned char find_minimum (unsigned char * array, unsigned int count);
+unsigned char find_minimum(unsigned char * array, unsigned int count);
 
 /**
  * @brief Sorts the given array from the largest to smallest.
@@ -110,6 +110,6 @@ unsigned char find_minimum (unsigned char * array, unsigned int count);
  *
  * @return void.
  */
-void sort_array (unsigned char * array, unsigned int count);
+void sort_array(unsigned char * array, unsigned int count);
 
 #endif /* __STATS_H__ */
