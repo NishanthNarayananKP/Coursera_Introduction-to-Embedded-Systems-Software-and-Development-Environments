@@ -33,7 +33,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -50,27 +50,22 @@ void main() {
   /* Statistics and Printing Functions */
 
   printf("\nArray before sorting: \n");
-  print_array(&test, SIZE);
+  print_array(test, SIZE);
 
-  minimum = find_minimum(&test, SIZE);
-  maximum = find_maximum(&test, SIZE);
-  median = find_median(&test, SIZE);
-  mean = find_mean(&test, SIZE);
-
-  print_statistics(minimum, maximum, mean, median);
-
-  sort_array(&test, SIZE);
+  sort_array(test, SIZE);
   printf("\nArray after sorting: \n");
-  print_array(&test, SIZE);
+  print_array(test, SIZE);
 
-  minimum = find_minimum(&test, SIZE);
-  maximum = find_maximum(&test, SIZE);
-  median = find_median(&test, SIZE);
-  mean = find_mean(&test, SIZE);
+  minimum = find_minimum(test, SIZE);
+  maximum = find_maximum(test, SIZE);
+  median = find_median(test, SIZE);
+  mean = find_mean(test, SIZE);
 
   print_statistics(minimum, maximum, mean, median);
 
   printf("\n");
+
+  return 0;
 
 }
 
@@ -110,8 +105,6 @@ void print_array(unsigned char * array, unsigned int count){
 
 unsigned char find_median(unsigned char * array, unsigned int count){
   
-  unsigned int median = 0;
-
   if(array == NULL){
     printf("Please Enter a valid input\n");
     return -1;
