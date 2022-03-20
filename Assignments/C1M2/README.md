@@ -14,9 +14,9 @@ Image 1: PLATFORM=HOST
 ![alt text](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Assignments/C1M2/C1M2_1.png)
 
 Image 2: PLATFORM=MSP432
-![alt text](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Assignments/C1M2/C1M2_3.png)
+![alt text](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Assignments/C1M2/C1M2_2.png)
 
 Image 2: make clean
-![alt text](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Assignments/C1M2/C1M2_2.png)
+![alt text](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Assignments/C1M2/C1M2_3.png)
 
 Author: Renato Soriano.
