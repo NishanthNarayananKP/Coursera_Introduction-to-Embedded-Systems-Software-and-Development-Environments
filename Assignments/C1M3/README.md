@@ -1,0 +1,17 @@
+### <ins>Assignment Requirements</ins>:  
+
+In this programming assignment you will need to analyze some allocated memory. 
+You will need to specify where the listed symbols will be placed in our program.Once you have figured out your memory space, you can take the Programming Assignment Quiz where you will provide detailsabout  specific symbol elements including:
+
+-Location Top segment or Type - Code, Data, Peripheral, Register, None
+-Location Sub-segment - Stack, Heap, BSS, Data, const/rodata, None
+-Access Permissions  - Read (R), Write (W) Read-write (RW), None
+-Lifetime - Function/Block, Program, Indefinite, None
+
+### <ins>Output</ins>:  
+
+Note: Click on each image for better visibility.
+
+
+
+Author: Renato Soriano.
