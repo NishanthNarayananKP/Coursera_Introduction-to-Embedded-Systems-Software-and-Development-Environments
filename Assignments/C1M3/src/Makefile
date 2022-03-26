@@ -10,12 +10,12 @@
 #*****************************************************************************
 
 #------------------------------------------------------------------------------
-# Makefile that can compile multiple source files and support two platform targets.
-# Build system using the GNU tools, GCC and GNU Make that supports two platforms; 
-# the host environment and the target embedded system MSP432.
+# Makefile that can compile multiple source files and support MSP432 platform target.
+# Build system using the GNU tools, GCC and GNU Make that supports target embedded 
+# system MSP432 platform.
 #
 #  @author Renato Soriano
-#  @date March 19, 2022
+#  @date March 22, 2022
 #
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
 #
@@ -40,45 +40,29 @@
 include sources.mk
 
 # Platform Overrides
-PLATFORM = HOST
-TARGET = c1m2
+PLATFORM = MSP432
+TARGET = c1m3
 GCFLAGS = -Wall -Werror -g -O0 -std=c99 
 
 # Architectures Specific Flags
-ifeq ($(PLATFORM),MSP432)
-	LINKER_FILE = ../msp432p401r.lds
-	CPU = cortex-m4
-	ARCH = thumb
-	ARCH_CAT = armv7e-m
-	FPU = fpv4-sp-d16
-	FLOAT_ABI = hard 
-	SPECS = nosys.specs
-else
-	CPU = $(shell cpu)
-	ARCH = $(shell arch)
-endif
+LINKER_FILE = ../msp432p401r.lds
+CPU = cortex-m4
+ARCH = thumb
+ARCH_CAT = armv7e-m
+FPU = fpv4-sp-d16
+FLOAT_ABI = hard 
+SPECS = nosys.specs
 
 # Compiler Flags and Defines
-ifeq ($(PLATFORM),MSP432)
-	CC = arm-none-eabi-gcc
-	LD = arm-none-eabi-ld
-	LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE) 
-	CFLAGS = -mcpu=$(CPU) -m$(ARCH) -march=$(ARCH_CAT) -mfloat-abi=$(FLOAT_ABI)\
-	 		 -mfpu=$(FPU) --specs=$(SPECS) $(GCFLAGS)
-	CPPFLAGS = -DMSP432
-	OBJDUMP = arm-none-eabi-objdump 
-	SIZE = arm-none-eabi-size
-	PLATFORM = MSP432
-else
-	CC = gcc
-	LD = ld
-	LDFLAGS = -Wl,-Map=$(TARGET).map
-	CFLAGS = $(GCFLAGS)
-	CPPFLAGS = -DHOST
-	OBJDUMP = objdump 
-	SIZE = size
-	PLATFORM = HOST
-endif
+CC = arm-none-eabi-gcc
+LD = arm-none-eabi-ld
+LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE) 
+CFLAGS = -mcpu=$(CPU) -m$(ARCH) -march=$(ARCH_CAT) -mfloat-abi=$(FLOAT_ABI)\
+	 -mfpu=$(FPU) --specs=$(SPECS) $(GCFLAGS)
+CPPFLAGS = -DMSP432
+OBJDUMP = arm-none-eabi-objdump 
+SIZE = arm-none-eabi-size
+PLATFORM = MSP432
 
 # Variable Definitions
 PREPS = $(SOURCES:.c=.i)
