@@ -20,6 +20,10 @@
 #define __COURSE1_H__
 
 #include <stdint.h>
+#include "platform.h"
+#include "memory.h"
+#include "stats.h"
+#include "data.h"
 
 #define DATA_SET_SIZE_W (10)
 #define MEM_SET_SIZE_B  (32)
@@ -30,6 +34,9 @@
 #define TEST_ERROR          (1)
 #define TEST_NO_ERROR       (0)
 #define TESTCOUNT           (8)
+
+#define BASE_16             (16)
+#define BASE_10             (10)
 
 /**
  * @brief function to run course1 materials

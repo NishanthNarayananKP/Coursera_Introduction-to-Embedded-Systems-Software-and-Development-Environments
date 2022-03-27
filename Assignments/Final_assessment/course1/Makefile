@@ -10,12 +10,12 @@
 #*****************************************************************************
 
 #------------------------------------------------------------------------------
-# Makefile that can compile multiple source files and support MSP432 platform target.
-# Build system using the GNU tools, GCC and GNU Make that supports target embedded 
-# system MSP432 platform.
+# Makefile that can compile multiple source files and support two platform targets.
+# Build system using the GNU tools, GCC and GNU Make that supports two platforms; 
+# the host environment and the target embedded system MSP432.
 #
 #  @author Renato Soriano
-#  @date March 22, 2022
+#  @date March 26, 2022
 #
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
 #
@@ -40,29 +40,55 @@
 include sources.mk
 
 # Platform Overrides
-PLATFORM = MSP432
-TARGET = c1m3
+PLATFORM = HOST
+TARGET = course1
+COURSE = COURSE1
+VERBOSE = DISABLE
 GCFLAGS = -Wall -Werror -g -O0 -std=c99 
 
 # Architectures Specific Flags
-LINKER_FILE = ../msp432p401r.lds
-CPU = cortex-m4
-ARCH = thumb
-ARCH_CAT = armv7e-m
-FPU = fpv4-sp-d16
-FLOAT_ABI = hard 
-SPECS = nosys.specs
+ifeq ($(PLATFORM),MSP432)
+	LINKER_FILE = ../msp432p401r.lds
+	CPU = cortex-m4
+	ARCH = thumb
+	ARCH_CAT = armv7e-m
+	FPU = fpv4-sp-d16
+	FLOAT_ABI = hard 
+	SPECS = nosys.specs
+else
+	CPU = $(shell cpu)
+	ARCH = $(shell arch)
+endif
 
 # Compiler Flags and Defines
-CC = arm-none-eabi-gcc
-LD = arm-none-eabi-ld
-LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE) 
-CFLAGS = -mcpu=$(CPU) -m$(ARCH) -march=$(ARCH_CAT) -mfloat-abi=$(FLOAT_ABI)\
-	 -mfpu=$(FPU) --specs=$(SPECS) $(GCFLAGS)
-CPPFLAGS = -DMSP432
-OBJDUMP = arm-none-eabi-objdump 
-SIZE = arm-none-eabi-size
-PLATFORM = MSP432
+ifeq ($(PLATFORM),MSP432)
+	CC = arm-none-eabi-gcc
+	LD = arm-none-eabi-ld
+	LDFLAGS = -Wl,-Map=$(TARGET).map -T $(LINKER_FILE) 
+	CFLAGS = -mcpu=$(CPU) -m$(ARCH) -march=$(ARCH_CAT) -mfloat-abi=$(FLOAT_ABI)\
+	 		 -mfpu=$(FPU) --specs=$(SPECS) $(GCFLAGS)
+	CPPFLAGS = -DMSP432
+	OBJDUMP = arm-none-eabi-objdump 
+	SIZE = arm-none-eabi-size
+	PLATFORM = MSP432
+else
+	CC = gcc
+	LD = ld
+	LDFLAGS = -Wl,-Map=$(TARGET).map
+	CFLAGS = $(GCFLAGS)
+	CPPFLAGS = -DHOST
+	OBJDUMP = objdump 
+	SIZE = size
+	PLATFORM = HOST
+endif
+
+ifeq ($(COURSE), COURSE1)
+	CPPFLAGS += -DCOURSE1
+endif
+
+ifeq ($(VERBOSE), ENABLE)
+	CPPFLAGS += -DVERBOSE
+endif
 
 # Variable Definitions
 PREPS = $(SOURCES:.c=.i)
