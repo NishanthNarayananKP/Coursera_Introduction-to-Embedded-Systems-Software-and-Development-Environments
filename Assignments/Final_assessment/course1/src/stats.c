@@ -27,10 +27,10 @@
  *
  */
 
-#include <stdio.h>
-#include "stats.h"
+#include "../include/common/stats.h"
 
-/* Size of the Data Set */
+/*
+// Size of the Data Set 
 #define SIZE (40)
 
 int main() {
@@ -41,13 +41,13 @@ int main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations */
+  // Other Variable Declarations 
   unsigned char minimum = 0;
   unsigned char maximum = 0;
   unsigned char mean = 0;
   unsigned char median = 0;
 
-  /* Statistics and Printing Functions */
+  // Statistics and Printing Functions 
 
   printf("\nArray before sorting: \n");
   print_array(test, SIZE);
@@ -68,6 +68,7 @@ int main() {
   return 0;
 
 }
+*/
 
 /* Implementation and Functions Definitions */
 
@@ -81,7 +82,10 @@ void print_statistics(unsigned char minimum, unsigned char maximum, unsigned cha
 }
 
 void print_array(unsigned char * array, unsigned int count){
-  
+
+   /* The array will print only if the user defines "VERBOSE" in the command line */
+  #ifdef VERBOSE
+
   if(array == NULL){
     printf("Please Enter a valid input\n");
     return;
@@ -101,6 +105,7 @@ void print_array(unsigned char * array, unsigned int count){
 
   printf("\n");
 
+  #endif
 }
 
 unsigned char find_median(unsigned char * array, unsigned int count){
