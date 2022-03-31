@@ -2,9 +2,9 @@
 
 In this programming assignment you will:
 
-- Write more C-programming code and integrate your code with your build system. 
-- Reuse version control repository and add some new c-programming functions that manipulate memory. Y
-- Test your code on your host machine and should compile for both the target platform and host platform. 
+- Write more C-programming code and integrate code with the build system. 
+- Reuse version control repository and add some new c-programming functions that manipulate memory.
+- Test code on the host machine and should compile for both the target platform and host platform. 
 
 ### <ins>Output</ins>:  
 
