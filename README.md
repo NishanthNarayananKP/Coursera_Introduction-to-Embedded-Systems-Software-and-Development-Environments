@@ -9,7 +9,7 @@ Date: March, 2022.
 
 - You can find the **[syllabus](Syllabus.md)** of this course.
  
-- The [**Certificate**](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Coursera Certificate.pdf) is available.
+- The [**Certificate**](https://github.com/renatosoriano/Coursera-Introduction-to-Embedded-Systems-Software-and-Development-Environments/blob/master/Coursera%20Certificate) is available.
 
 ## Descriptions
 
@@ -26,7 +26,7 @@ Most images I used in the course notes are from the course slides.
 **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)** - If you have Windows or Mac, you need to setup VirtualBox. \
 **[VMware Workstation](https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html)** - Or setup VMware. \
 **[Parallels Desktop](https://www.parallels.com/products/desktop/)** - My recommendation for Mac users. \
-**[Sublime Text](https://www.sublimetext.com/3)** - Any code editor but sublime is a better choice for Ubuntu and Windows.
-**[Visual Studio Code](https://code.visualstudio.com/)** - My recommendation due to the integration of GitHub in the same coding IDE.
+**[Sublime Text](https://www.sublimetext.com/3)** - Any code editor but sublime is a better choice for Ubuntu and Windows. \
+**[Visual Studio Code](https://code.visualstudio.com/)** - My recommendation due to the integration of GitHub in the same coding IDE. \
 
 ![](copyright.png)

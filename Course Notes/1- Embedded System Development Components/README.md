@@ -19,15 +19,15 @@
 - SW configuration management (SCM) is the process that handles how we configure and go about developing the code for the project.
 - SCM simply describes how the software is developed and organized.
 - This process contains a diverse set of goals and guidelines that dictate the software processes just as: 
-  - Version Control
-  - Development Process
-  - Environmental Information
-  - Software Build and Release
-  - Software Review
-  - Testing
-  - Support
-  - Defect Tracking
-  - Task Management
+  - Version Control.
+  - Development Process.
+  - Environmental Information.
+  - Software Build and Release.
+  - Software Review.
+  - Testing.
+  - Support.
+  - Defect Tracking.
+  - Task Management.
 
 - These guidelines help coordinating the schedule and deliverables of the team.
 - Defining the practices of an SCM is dependent on the company or the team itself, as well as the platform needs. (a team may have some specific testing practices while other team implements all of their code in assembly).
@@ -75,7 +75,7 @@
 - Another strength point of the coding standards is that it greatly enhances the code readability.
 - Can also ensure security, portability, reliability, and safety of software.
 - A very common C programming guideline for embedded systems is the Motor Industry Software Reliability Association MISRA-C.
-- Another guideline is the Ganssle’s “Firmware Development Standard”
+- Another guideline is the Ganssle’s “Firmware Development Standard”.
 - Also the company's software team can develop their own specific coding guideline based on their requirements.
 - Team members come and go over time, but the company must ensure quality and maintainability of their products along their lifetime, that's why the coding guidelines are crucial for them.
 - The following image shows a code example written with the Ganssle's firmware development standard.
@@ -89,7 +89,7 @@
 
 ![](Images/Ganssle'sExample2.png)
 
-- Usually, these comments are only included in the header file, as the header file may be the only thing a software engineer has access to when interfacing with the software which has its implementation files pre-compiled
+- Usually, these comments are only included in the header file, as the header file may be the only thing a software engineer has access to when interfacing with the software which has its implementation files pre-compiled.
 - Constant information are represented in CAPITAL letters as shown below:
 
 ![](Images/Ganssle'sExample3.png)
@@ -166,6 +166,7 @@
 ![](Images/physicalSpecs.png)
 
 - The datasheet may not provide information on configuration, if so, then we find these information in the `reference manual` which describes the configuraion details, and how to write the bare-metal firmware for the chip.
+
 ![](Images/referenceManual.png)
 
 - Sometimes there are issues with the product after releasing or missing details, these issues and missing details are documented in the `chip errata` as well as additional and corrective information for the device. It's important to refer to the errata if we saw something is operating unexpectedly with the chip.
@@ -226,7 +227,7 @@
 ![](Images/commit.png)
 
 
-- In order to reduce data overhead, git allows the commit to store just the information on the changes between the current version to be committed and the previous one -which is called the parent commit-. In other words, git is actually tracking the deltas or the changes between each successive commit, meaning that not all files are updated in each commit ... just the changed ones.
+- In order to reduce data overhead, git allows the commit to store just the information on the changes between the current version to be committed and the previous one -which is called the parent commit-. In other words, git is actually tracking the deltas or the changes between each successive commit, meaning that not all files are updated in each commit, just the changed ones.
 
 ![](Images/deltas.png)
 
@@ -241,6 +242,7 @@
 ![](Images/collaboration.png)
 
 - We consider other teammates' local repos as a remote repo too, so I can pull from local repos and push to their local repos.
+
 ![](Images/collaboration2.png)
 
 - Companies may store the repo privately on their internal servers to protect their intellectual property, and may open-source the project and make the repo available on repository store sites such as:
