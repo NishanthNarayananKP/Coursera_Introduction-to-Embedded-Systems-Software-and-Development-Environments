@@ -115,14 +115,14 @@ uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
 /**
  * @brief Copies bytes from the source to the destination.
  *
- * Given two pointers to a char data set, this will move bytes
+ * Given two pointers to a char data set, this will copy bytes
  * from the source to the destination. The behavior is undefined if there
  * is overlap of source and destination. Copy should still occur, but will
  * likely corrupt the data.
  *
  * @param src Pointer to source location.
  * @param dst Pointer to destination location.
- * @param length Length of bytes to move from the source to the destination.
+ * @param length Length of bytes to copy from the source to the destination.
  *
  * @return Pointer to the destination location.
  */
