@@ -83,7 +83,7 @@ int8_t test_memmove1();
 /**
  * @brief function to test an overlapped Memmove operation Part 1
  * 
- * This function calls the memmove routine with two sets of data that not
+ * This function calls the memmove routine with two sets of data that
  * over lap. Overlap exists at the start of the destination and the end of the
  * source pointers. This function should print that a move worked correctly
  * for a move from source to destination regardless of overlap.
@@ -95,7 +95,7 @@ int8_t test_memmove2();
 /**
  * @brief function to run course1 memmove overlapped test
  * 
- * This function calls the memmove routine with two sets of data that not
+ * This function calls the memmove routine with two sets of data that
  * over lap. Overlap exists at the start of the source and the end of the
  * destination pointers. This function should print that a move worked correctly
  * for a move from source to destination regardless of overlap.
@@ -117,7 +117,7 @@ int8_t test_memcopy();
 /**
  * @brief function to test the memset and memzero functionality
  * 
- * This function calls the memset and memzero functions. This shoudl zero out
+ * This function calls the memset and memzero functions. This should zero out
  * the bytes from [] to []. This should set the bytes [] to [] with 0xFF.
  *
  * @return void
@@ -127,7 +127,7 @@ int8_t test_memset();
 /**
  * @brief function to test the reverse functionality
  * 
- * This function calls the my_reverse function to see if a give set of ASCII
+ * This function calls the my_reverse function to see if a given set of ASCII
  * characters will properly reverse.
  *
  * @return void
